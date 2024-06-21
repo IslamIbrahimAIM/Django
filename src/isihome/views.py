@@ -7,21 +7,47 @@ from visits.models import PageVisit
 this_dir = pathlib.Path(__file__).resolve().parent
 
 
-def home_page_view(request, *args, **kwargs):
+def home_view(request, *args, **kwargs):
     qs = PageVisit.objects.all()
     page_qs = PageVisit.objects.filter(path = request.path)
+    try:
+        percent = f'{round((page_qs.count() / qs.count()) * 100, 2)}%'
+    except ZeroDivisionError:
+        percent = '0%'
     my_title = "testing"
     m_context = {
         'page_title': my_title,
         "page_visit_count" : page_qs.count(),
         'total_visit_count': qs.count(),
-        'percent': f'{round((page_qs.count() / qs.count()) * 100, 2)}'+'%'
+        'percent': percent
     }
     path = request.path
     html_tempelate = "home.html"
 
     PageVisit.objects.create(path = request.path)
     return render(request, html_tempelate, m_context)
+
+def about_view(request, *args, **kwargs):
+    qs = PageVisit.objects.all()
+    page_qs = PageVisit.objects.filter(path = request.path)
+    try:
+        percent = f'{round((page_qs.count() / qs.count()) * 100, 2)}%'
+    except ZeroDivisionError:
+        percent = '0%'
+    my_title = "testing"
+    m_context = {
+        'page_title': my_title,
+        "page_visit_count" : page_qs.count(),
+        'total_visit_count': qs.count(),
+        'percent': percent
+    }
+    path = request.path
+    html_tempelate = "home.html"
+
+    PageVisit.objects.create(path = request.path)
+    return render(request, html_tempelate, m_context)
+
+
 
 def old_home_page_view(request, *args, **kwargs):
     my_title = "sara"
