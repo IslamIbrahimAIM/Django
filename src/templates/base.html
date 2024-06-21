@@ -11,11 +11,12 @@
               gtag('config', 'G-CPK41EM5P3');
          </script>
         <title>{% block head_title%}SaaS{% endblock head_title %}</title>
+        {% include 'base/css.html' %}
     </head>
     <body>
-        <h1>Hello Bitch</h1>
+        {% include 'nav/navbar.html' %}
         {% block content %}
-
         {% endblock content %}
+        {% include 'base/js.html' %}
     </body>
 </html>
