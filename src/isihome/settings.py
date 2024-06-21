@@ -26,7 +26,9 @@ load_dotenv(dotenv_path)
 SECRET_KEY = 'django-insecure-rtmsa3a5()7gjl++lhn=3!3%tvl(zv4-j2z7znsw^!%0&t+c)='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = str(os.environ.get("DEBUG")).lower() == "true"
+
+
 
 ALLOWED_HOSTS = [
     ".railway.app"
