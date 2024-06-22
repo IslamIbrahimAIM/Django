@@ -196,6 +196,9 @@ SOCIALACCOUNT_PROVIDERS = {
     }
 }
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://metricmastery.up.railway.app'
+]
 # ACCOUNT_EMAIL_VERIFICATION = "none"
 # SOCIALACCOUNT_PROVIDERS = {
 #     'github': {
