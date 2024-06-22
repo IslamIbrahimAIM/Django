@@ -190,9 +190,20 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 # Provider specific settings
+# SOCIALACCOUNT_PROVIDERS = {
+#     "github": {
+#         "VERIFIED_EMAIL": True
+#     }
+# }
+
+ACCOUNT_EMAIL_VERIFICATION = "none"
 SOCIALACCOUNT_PROVIDERS = {
-    "github": {
-        "VERIFIED_EMAIL": True
+    'github': {
+        'APP': {
+            'client_id': config('GITHUB_CLIENT_ID'),
+            'secret': config('GITHUB_CLIENT_SECRET'),
+            'key': ''
+        }
     }
 }
 
