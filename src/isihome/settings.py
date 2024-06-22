@@ -71,7 +71,8 @@ print("DEBUG", DEBUG, type(DEBUG))
 
 
 ALLOWED_HOSTS = [
-    ".railway.app"
+    ".railway.app",
+    "0.0.0.0"
 ]
 if DEBUG:
     ALLOWED_HOSTS += [
