@@ -190,22 +190,22 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 # Provider specific settings
-# SOCIALACCOUNT_PROVIDERS = {
-#     "github": {
-#         "VERIFIED_EMAIL": True
-#     }
-# }
-
-# ACCOUNT_EMAIL_VERIFICATION = "none"
 SOCIALACCOUNT_PROVIDERS = {
-    'github': {
-        'APP': {
-            'client_id': config('GITHUB_CLIENT_ID'),
-            'secret': config('GITHUB_CLIENT_SECRET'),
-            'key': ''
-        }
+    "github": {
+        "VERIFIED_EMAIL": True
     }
 }
+
+# ACCOUNT_EMAIL_VERIFICATION = "none"
+# SOCIALACCOUNT_PROVIDERS = {
+#     'github': {
+#         'APP': {
+#             'client_id': config('GITHUB_CLIENT_ID'),
+#             'secret': config('GITHUB_CLIENT_SECRET'),
+#             'key': ''
+#         }
+#     }
+# }
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
